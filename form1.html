@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: o;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color: palevioletred;
+            display: flex;
+            justify-content: center;
+            min-height: 400px;
+        }
+        form{
+            background-color: chocolate;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+
+        }
+        input[type="text"],input[type="password"]{
+            width: 100%;
+            padding: 1O0px;
+            margin-bottom: 20px;
+            border: 2px double black;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,input[type="password"]:focus{
+            border-color: lightcoral;
+            outline: none;
+        }
+        p{
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 300px;
+
+        }
+        p a{
+            color: beige;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2 ease;
+
+        }
+        p a:hover{
+            color: #004499;
+            text-decoration: underline;
+        }
+        button[type="submit"]{
+            width: 100%;
+            padding: 10px;
+            border-color: black;
+            color: BLACK;
+            border: double;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover{
+            background-color: brown;
+        }
+        button[type="submit"]:active{
+            transform: scale(0.98);
+
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for=""> EMAIL OR USERNAME</label>
+        <input type="text" placeholder="example@Email.com" id="usrname" required>
+
+        <label for="passk">PASSWORD</label>
+        <input type="password" placeholder="**********"required >
+
+        <p><a href="password-rest.html"Recover password></a></p>
+        <button type="submit">SUBMIT</button>
+    </form>
+
+</body>
+</html>
