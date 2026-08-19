@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 13px;
+            text-decoration: none;
+        }
+        body{
+            background: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        label{ margin: 4px 0; display: block;}
+
+        form{
+            width: 400px;
+            background: #fff;
+            box-shadow: 0 0 5px 0 #808080;
+        }
+        input,button{
+            padding: 12px;
+            display: block;
+            margin-bottom: 12px;
+            width: 100%;
+            background: transparent;
+            border: 1px solid aliceblue;
+            border-radius: 4px;
+
+        }
+        .passs{
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        button{
+            background: rgb(83, 73, 231);
+            color: #fff;
+            font-weight: 700px;
+            border: 0;
+        }
+        .create{
+            text-align: center;
+        }
+        .footer{
+            background: rgb(83, 73, 231);
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            font-size: 10px;
+        }
+        .form-inner{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="form-inner">
+
+        <label for=""> EMAIL OR USERNAME</label>
+        <input type="text" placeholder="example@Email.com" id="usrname" required>
+
+        <label for="passk">PASSWORD</label>
+        <input type="password" placeholder="**********"required >
+
+        <p class="passs"> <a href="password-rest.html"> Recover Password</a> </p>
+        <button type="submit">SUBMIT</button>
+
+        <div class="create">
+
+        <a href="">Create Account</a>
+        </div>
+        </div>
+
+        <div class="footer">
+            <h2>bridal towers</h2>
+            <p>Lorem ipsum dolor sit.</p>
+        </div>
+    </form>
+
+</body>
+</html>
