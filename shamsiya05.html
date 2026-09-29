@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/icons/System/checkbox-circle-line.svg">
+    <style>
+        *{
+           padding: 0; 
+           box-sizing: border-box;
+           margin: 0;
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background: #ffffff;
+            color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .card-contents{
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            width: 100%;
+            
+        }
+        .card{
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+            padding: 35px 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            width: 330px;
+            max-width: 300px;
+            margin: 50px auto;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .card button{
+            background: white;
+            border-color: #0758d8;
+            border: 1px solid blue;
+            padding: 12px 24px;
+            width: 190px;
+            margin: 0 auto 25px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            color: blue;
+            font-weight: 600;
+
+        }
+        .card button:hover{
+            background: blue;
+            color: white;
+        }
+        .card .shift{
+            background: transparent;
+            border: 1px solid blue;
+            color: blue;
+            border-radius: 20px;
+            padding: 7px 25px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: none;
+            margin-bottom: 20px;
+            width: auto;
+            min-width: 110px;
+
+        }
+        .card p{
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #555;
+        
+        }
+        .card h1, .card h2, .card h3{
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card h1, .card h2, .dollar{
+            font-size: 1rem;
+            font-weight: 400;
+            position: relative;
+            top: -14px;
+            margin-right: 3px;
+             
+        }
+        .card h1, .card h2, .money{
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .card h1, .card h2, .month{
+            font-size: 1rem;
+            font-weight: 400;
+            position: relative;
+            top: 12px;
+            margin-left: 3px;
+        }
+        .card h3 .dollar{
+            font-size: 1rem;
+            font-weight: 400;
+            position: relative;
+            top: -14px;
+            margin-right: 3px;
+             
+        }
+        .card h3 .money{
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .card h3 .month{
+            font-size: 1rem;
+            font-weight: 400;
+            position: relative;
+            top: 12px;
+            margin-left: 3px;
+
+        }
+
+
+        
+       .card ul{
+            width: 100%;
+            text-align: left;
+            margin-top: 5px;
+        }
+        .card li{
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #555;
+            gap: 10px;
+            align-items: center;
+
+        }
+        .card li i{
+            color: skyblue;
+            font-size: 20px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <section class="card-contents">
+        <div class="card">
+            <button class="shift">Starter</button>
+            <p>Lorem ipsum is simply dummy text of the printing and industry.</p>
+            <h1>
+                <span class="dollar">$</span>
+                <span class="money">0</span>
+                <span class="month">/mo</span>
+            </h1>
+            <button>START FREE TRIAL </button>
+            <ul>
+                <li><i class="ri-checkbox-circle-line"></i>Cras justo odio</li>
+                <li><i class="ri-checkbox-circle-line"></i>Dapibus ac facilisis in</li>
+                <li><i class="ri-checkbox-circle-line"></i>Morbi leo risus.</li>
+                <li><i class="ri-checkbox-circle-line"></i>Excepteur sint occaecat velit</li>
+            </ul>
+        </div>
+        <div class="card">
+            <button class="shift">Exclusive</button>
+            <p>Lorem ipsum is simply dummy text of the printing and industry.</p>
+            <h2>
+               <span class="dollar">$</span>
+                <span class="money">99</span>
+                <span class="month">/mo</span> 
+            </h2>
+            <button>START FREE TRIAL</button>
+            <ul>
+               <li><i class="ri-checkbox-circle-line"></i>Cras justo odio</li>
+                <li><i class="ri-checkbox-circle-line"></i>Dapibus ac facilisis in</li>
+                <li><i class="ri-checkbox-circle-line"></i>Morbi leo risus.</li>
+                <li><i class="ri-checkbox-circle-line"></i>Excepteur sint occaecat velit</li> 
+            </ul>
+            </div>
+        <div class="card">
+            <button class="shift">Premium</button>
+            <p>Lorem ipsum is simply dummy text of the printing and industry.</p>
+            <h3>
+                <span class="dollar">$</span>
+                <span class="money">150</span>
+                <span class="month">/mo</span>
+            </h3>
+            <button> START FREE TRIAL</button>
+            <ul>
+                <li><i class="ri-checkbox-circle-line"></i>Cras justo odio</li>
+                <li><i class="ri-checkbox-circle-line"></i>Dapibus ac facilisis in</li>
+                <li><i class="ri-checkbox-circle-line"></i>Morbi leo risus.</li>
+                <li><i class="ri-checkbox-circle-line"></i>Excepteur sint occaecat velit</li>
+            </ul>
+        </div>
+            
+    </section>
+</body>
+</html>
