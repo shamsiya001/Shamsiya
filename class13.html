@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo"></h1>
+    <p id="demo1"></p>
+
+    <h5 id="name"></h5>
+    <h5 id="addr"></h5>
+    <ol id="list1">
+    
+    </ol>
+
+
+</body>
+<script>
+    let user = "solomon"
+    console.log(user)
+    //output methods
+    document.write(user)
+   // alert(user)
+
+   //using an element
+   document.querySelector('#demo').innerHTML = user
+
+   //
+   document.writeln("<h3 style='color:blue'>hello world</h3>")
+   document.writeln("<h3 style='color:blue'>"+ user +"</h3>")
+   document.writeln(`<h3 style='color:blue'> ${user} </h3>`)
+
+   //classwork
+   //print YES or NO based on any condition
+
+   text = 10 > 44 ? "<span style='color:blue'>YES</span>":
+                   "<span style='color:red'>NO</span"
+   document.write(text)
+   
+   user = {
+    name:"solomon",
+    addr:"Wuse",
+    course:["CSS", "JS", "PY"]
+   }
+   document.querySelector('#name').innerHTML = user.name
+   document.querySelector('#addr').innerHTML = user.addr
+   li = ''
+   user.course.forEach(c => {
+    li+=`<li>${c}</li>`
+   });
+   document.querySelector('#list1').innerHTML = li
+
+</script> 
+</html>

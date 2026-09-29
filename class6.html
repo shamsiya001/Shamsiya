@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/icons/Health%20%26%20Medical/capsule-line.svg">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #000011f0;
+        }
+
+        header {
+            background: #00001145;
+            border-bottom: 1px solid #80808045;
+            box-shadow: 0 0 12px 0 #00000099;
+            color: #fff;
+            padding: 10px 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+        }
+
+        header nav a {
+            color: #ffffffe3;
+            font-size: 13px;
+            text-transform: capitalize;
+            display: block;
+            padding: 10px;
+        }
+
+        header nav a:hover {
+            background: #ffffffe3;
+            color: #000011f0;
+        }
+
+        header div a {
+            background: #ffffffe3;
+            color: #000011f0;
+            display: block;
+            padding: 10px 30px;
+            border-radius: 8px;
+
+            &:hover {
+                font-weight: 700;
+            }
+        }
+
+        header nav {
+            display: flex;
+
+            @media screen and(max-width:768px) {
+                display: none;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 99%;
+            margin: auto;
+        }
+
+        .intro {
+            height: 80vh;
+        }
+
+        .intro .container {
+            display: flex;
+            color: #fff;
+            align-items: center;
+            flex-direction: row;
+
+            @media screen and(max-width:768px) {
+                flex-direction: column;
+            }
+        }
+
+        .intro h3 {
+            font-size: 150px;
+            color: #fff;
+
+            @media screen and(max-width:768px) {
+                font-size: 50px;
+            }
+        }
+
+        .intro span {
+            color: #009;
+        }
+
+        .intro h4 {
+            font-size: 100px;
+            color: #ffffffe3;
+
+            @media screen and(max-width:768px) {
+                font-size: 100px;
+            }
+        }
+
+        .intro .cta {
+            display: flex;
+        }
+
+        .intro .cta a {
+            background: #fff;
+            font-weight: bold;
+            margin: 10px;
+            padding: 10px 30px;
+            border-radius: 4px;
+        }
+
+        a.explore {
+            background: transparent;
+            border: 1px solid #ffffffe3;
+            color: #000011f0;
+        }
+
+        .story {
+            padding: 70px 50px;
+            background: #ffffff;
+        }
+
+        .story-container {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .story-image {
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .story-content {
+            max-width: 520px;
+        }
+
+        .story-content h1 {
+            font-size: 35px;
+            line-height: 1.2;
+            color: #222;
+            margin-bottom: 25px;
+        }
+
+        .story-content p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            color: blue;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+
+            margin-bottom: 22px;
+        }
+
+        .buttons button {
+            border: none;
+            background: #f1f1f1;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 13px;
+
+
+        }
+
+        .buttons button:hover {
+            background: blue;
+            color: white;
+        }
+
+        .pricing {
+            width: 100%;
+            padding: 60px 20px;
+            text-align: center;
+
+        }
+
+
+        .pricing-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .pricing-button {
+            background: transparent;
+            border: 1px solid blue;
+            color: blue;
+            border-radius: 20px;
+            padding: 7px 25px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: none;
+            margin-bottom: 20px;
+            width: auto;
+            min-width: 110px;
+
+
+        }
+
+        h1 {
+            margin-bottom: 12px;
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        .card-contents {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            max-height: 100vh;
+            width: 100%;
+            margin: 0;
+            background-color: white;
+            padding: 60px 30px;
+
+        }
+
+        .card {
+            background: #ffffff;
+            box-shadow: 0 10px rgba(0, 0, 0, 0.08);
+            padding: 35px 25px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            width: 330px;
+            flex: 0 0 330px;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .card button {
+            background: white;
+            border-color: #0758d8;
+            border: 1px solid blue;
+            padding: 12px 24px;
+            width: 190px;
+            margin: 0 auto 25px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            color: blue;
+            font-weight: 600;
+
+        }
+
+        .card button:hover {
+            background: blue;
+            color: white;
+        }
+
+        .card .shift {
+            background: transparent;
+            border: 1px solid blue;
+            color: blue;
+            border-radius: 20px;
+            padding: 7px 25px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: none;
+            margin-bottom: 20px;
+            width: auto;
+            min-width: 110px;
+
+        }
+
+        .card p {
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #555;
+
+        }
+
+        .card h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card h3,
+        .dollar {
+            font-size: 1rem;
+            font-weight: 400;
+            position: relative;
+            top: -14px;
+            margin-right: 3px;
+
+        }
+
+        .card h3,
+        .money {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .card h1,
+        .card h2,
+        .month {
+            font-size: 1rem;
+            font-weight: 400;
+            position: relative;
+            top: 12px;
+            margin-left: 3px;
+        }
+
+        .card h3 .dollar {
+            font-size: 1rem;
+            font-weight: 400;
+            position: relative;
+            top: -14px;
+            margin-right: 3px;
+
+        }
+
+        .card h3 .money {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .card h3 .month {
+            font-size: 1rem;
+            font-weight: 400;
+            position: relative;
+            top: 12px;
+            margin-left: 3px;
+
+        }
+
+
+
+        .card ul {
+            width: 100%;
+            text-align: left;
+            margin-top: 5px;
+            list-style-type: none;
+        }
+
+        .card li {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+        }
+
+        .card li i {
+            color: skyblue;
+            font-size: 20px;
+        }
+
+        .services {
+            background: white;
+        }
+       
+        .heading {
+
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .service-button{
+            background: transparent;
+            border: 1px solid blue;
+            color: blue;
+            border-radius: 20px;
+            padding: 7px 25px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: none;
+            margin-bottom: 20px;
+            width: auto;
+            min-width: 110px;
+        }
+
+        .heading p {
+            font-size: 13px;
+        }
+        .service-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .cards {
+            background: white;
+            box-shadow: 0 0 10px lightblue;
+            border: 1px;
+            padding: 30px 35px;
+            border-radius: 8px;
+            width: 330px;
+            max-width: 450px;
+            margin: 50px auto;
+            flex-direction: column;
+            align-items: center;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+        }
+
+        .card-icon {
+            font-size: 22px;
+            border: 1px solid blue;
+            border-radius: 50%;
+            color: blue;
+            width: 60px;
+            height: 60px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            margin-bottom: 20px;
+
+        }
+
+        .cards h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .cards p {
+            font-size: 13px;
+        }
+
+        .talk {
+            background: blue;
+            text-align: center;
+            padding: 100px 24px;
+
+        }
+
+        .talk h1 {
+            color: white;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .talk p {
+            color: white;
+            line-height: 1.7;
+            margin-bottom: 32px;
+            font-size: 15px;
+        }
+
+        .talk-content {
+            max-width: 690px;
+            margin: 0 auto;
+        }
+
+        .talk button {
+            display: inline-block;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 2px solid white;
+            border-radius: 4px;
+            padding: 12px 20px;
+            background: blue;
+
+            &:hover {
+                background-color: white;
+                color: blue;
+            }
+        }
+        .news{
+            margin: 0 auto;
+            text-align: center;
+            background: white;
+            padding: 60px 20px;
+        }
+        .news-button{
+            background: transparent;
+            border: 1px solid blue;
+            color: blue;
+            border-radius: 20px;
+            padding: 7px 25px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: none;
+            margin-bottom: 10px;
+            width: auto;
+            min-width: 110px;
+            text-align: center;
+            justify-content: center;
+            margin-top: 15px;
+
+        }
+        .news-button h1{
+            margin-bottom: 5px;
+        }
+        .news-button p{
+            margin-bottom: 20px;
+        }
+        .blog-card{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 30px;
+            text-align: left;
+        }
+        .news-card{
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+        }
+        .news-image-container{
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+
+        }
+        .news-image-container img{
+            display: block;
+        }
+        .author-badge{
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            font-size: 10px;
+            padding: 8px 18px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px lightblue;
+            z-index: 10;
+        }
+        
+        .news-card-content{
+            padding-top: 20px ;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .news-card-content h3{
+            margin-bottom: 12px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2> <i class="ri-css3-line"></i></h2>
+        <nav>
+            <a href="">Home</a>
+            <a href="">Sevices</a>
+            <a href="">Contact</a>
+            <a href="">Blox</a>
+        </nav>
+        <div>
+            <a href="">Get Started</a>
+        </div>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="container">
+                <div class="text">
+                    <h3>
+                        css <span>3</span>
+                    </h3>
+                    <h4>Fast Responsive Design</h4>
+                    <i>Lorem, ipsum dolor.</i>
+                    <div class="cta">
+                        <a href="">get start</a>
+                        <a href="" class="explore">Explore &longrightarrow;</a>
+                    </div>
+
+                </div>
+                <div class="img">
+                    <img src="" alt="">
+                </div>
+                <div class="img">
+                    <img src="pic1.jpg" width="65%" alt="">
+
+                </div>
+
+            </div>
+        </Section>
+        <section class="story">
+            <div class="story-container">
+                <div class="story-image">
+                    <img src="pic2.jpg" width="100%" alt="">
+                </div>
+                <div class="story-content">
+                    <p class="title">-OUR STORY</p>
+                    <h1>Our team comes with the experience and knowledge</h1>
+                    <div class="buttons">
+                        <button>Who We Are</button>
+                        <button>Our Vision</button>
+                        <button>our History</button>
+                    </div>
+                    <p>We are a dedicated team pocused on providing quality services and creating meaningful experiences
+                        for our users</p>
+                    <p>Our team brings years of experience and knowledge to every project, helping businesses grow and
+                        achieve their goals</p>
+                </div>
+            </div>
+        </Section>
+        <section class="services">
+            <div class="heading">
+                 <button class="service-button">Services</button>
+                <h1> Our Best Services</h1>
+                <p>There are many variations of passages of Lorem ipsum available, but the majority have suffered
+                    alteration in some form</p>
+            </div>
+            <div class="service-container">
+                <div class="cards">
+                    <div class="card-icon">
+                        <i class="ri-capsule-line"></i>
+                    </div>
+                    <h2>Refreshing design</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae eaque delectus similique modi
+                        provident. Dolorum.</p>
+                </div>
+                <div class="cards">
+                    <div class="card-icon">
+                        <i class="ri-bootstrap-line"></i>
+                    </div>
+                    <h2>Solid Bootstrap 5</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, harum possimus eos cum
+                        dolorum sequi.</p>
+                </div>
+                <div class="cards">
+                    <div class="card-icon">
+                        <i class="ri-code-s-line"></i>
+                    </div>
+                    <h2>100+ Components</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur officiis ex eum eos
+                        reprehenderit quod.</p>
+
+
+                </div>
+                <div class="cards">
+                    <div class="card-icon">
+                        <i class="ri-dashboard-3-line"></i>
+                    </div>
+                    <h2>speed Optimized</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum rerum magni qui consequatur.
+                        Quasi, quos!</p>
+                </div>
+                <div class="cards">
+                    <div class="card-icon">
+                        <i class="ri-stack-line"></i>
+                    </div>
+                    <h2>Fully Customizable</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, consequatur a tempora modi
+                        autem quia.</p>
+                </div>
+                <div class="cards">
+                    <div class="card-icon">
+                        <i class="ri-refresh-line"></i>
+                    </div>
+                    <h2>Regular updates</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur omnis mollitia id beatae,
+                        harum amet!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card-contents">
+            <section class="pricing">
+                <div class="pricing-container">
+                    <button class="pricing-button">pricing</button>
+                    <h1>pricing & plans</h1>
+                    <p>Find a plan that's right for you and your business goals</p>
+                </div>
+
+            </section>
+            <div class="card">
+                <button class="shift">Starter</button>
+                <p>Lorem ipsum is simply dummy text of the printing and industry.</p>
+                <h3>
+                    <span class="dollar">$</span>
+                    <span class="money">0</span>
+                    <span class="month">/mo</span>
+                </h3>
+                <button>START FREE TRIAL </button>
+                <ul>
+                    <li><i class="ri-checkbox-circle-line"></i>Cras justo odio</li>
+                    <li><i class="ri-checkbox-circle-line"></i>Dapibus ac facilisis in</li>
+                    <li><i class="ri-checkbox-circle-line"></i>Morbi leo risus.</li>
+                    <li><i class="ri-checkbox-circle-line"></i>Excepteur sint occaecat velit</li>
+                </ul>
+            </div>
+            <div class="card">
+                <button class="shift">Exclusive</button>
+                <p>Lorem ipsum is simply dummy text of the printing and industry.</p>
+                <h3>
+                    <span class="dollar">$</span>
+                    <span class="money">99</span>
+                    <span class="month">/mo</span>
+                </h3>
+                <button>START FREE TRIAL</button>
+                <ul>
+                    <li><i class="ri-checkbox-circle-line"></i>Cras justo odio</li>
+                    <li><i class="ri-checkbox-circle-line"></i>Dapibus ac facilisis in</li>
+                    <li><i class="ri-checkbox-circle-line"></i>Morbi leo risus.</li>
+                    <li><i class="ri-checkbox-circle-line"></i>Excepteur sint occaecat velit</li>
+                </ul>
+            </div>
+            <div class="card">
+                <button class="shift">Premium</button>
+                <p>Lorem ipsum is simply dummy text of the printing and industry.</p>
+                <h3>
+                    <span class="dollar">$</span>
+                    <span class="money">150</span>
+                    <span class="month">/mo</span>
+                </h3>
+                <button> START FREE TRIAL</button>
+                <ul>
+                    <li><i class="ri-checkbox-circle-line"></i>Cras justo odio</li>
+                    <li><i class="ri-checkbox-circle-line"></i>Dapibus ac facilisis in</li>
+                    <li><i class="ri-checkbox-circle-line"></i>Morbi leo risus.</li>
+                    <li><i class="ri-checkbox-circle-line"></i>Excepteur sint occaecat velit</li>
+                </ul>
+            </div>
+
+        </section>
+        <section class="talk">
+            <div class="talk-content">
+                <h1>We love to make perfect solutions for your business</h1>
+                <p>why i say old chap that is, spiffing off his nut cor guvnords geeza bloke knees up bobby, sloshed
+                    arse William cack Richard. Bloke fanny around chesed of bum bag old lost the pilot say there
+                    spiffing off his nut
+
+                </p>
+                <button>GET STARTED</button>
+            </div>
+        </section>
+        <section class="news">
+            <button class="news-button"> latest news</button>
+            <h1>Latest News & Blog</h1>
+            <p>There are many various of passages of lorem ipsum available, but the majority have suffered alteration in
+                some form.</p>
+            <div class="blog-card">
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="pic3.jpg" width="100%" alt="">
+                        <div class="author-badge">
+                            BY SHAMSIYA
+                        </div>
+                    </div>
+                    <div class="news-card-content">
+                        <h3>Make your team a design driven company</h3>
+                        <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has
+                            been the industry's standard,</p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="pic4.jpg" width="100%" alt="">
+                        <div class="author-badge">
+                            BY SHAMSIYA
+                        </div>
+                    </div>
+                    <div class="news-card-content">
+                        <h3>The newest web framework that changed the world</h3>
+                        <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has
+                            been the industry's standard,</p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="pic5.jpg" width="100%" alt="">
+                        <div class="author-badge">
+                            BY SHAMSIYA
+                        </div>
+                    </div>
+                    <div class="news-card-content">
+                        <h3>5 ways to improve user retension for your startup</h3>
+                        <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has
+                            been the industry's standard,</p>
+                    </div>
+                </div>
+            </div>
+            
+
+        </section>
+
+    </main>
+
+
+
+</body>
+
+</html>

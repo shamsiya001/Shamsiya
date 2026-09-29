@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <style>
+        :root{
+            --color_a:red;
+            --color_b:blue;
+            --sm-size:12;
+            --red-rgb:225,0,0;
+            --bs-primary-rgb:200,200,0;
+        }
+        .demo{
+            background: #009 !important;
+            border: 12px solid var(--color_a);
+        }
+        .bg-primary{
+            background: var(--color_a)!important;
+        }
+        .bg-danger{
+            background: rgb(var(--red-rgb)) !important;
+        }
+        .btn-primary{
+            --bs-btn-bg:rgb(var(--bs-primary-rgb));
+            --bs-btn-hover-bg:rgb(var(--bs-primary-rgb),.5);
+            --bs-btn-active-bg:rgb(var(--bs-primary-rgb));
+
+
+
+        }
+       
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Bizmarrow</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">pricing</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="demo m-3 rounded-4 p-4 bg-black">Lorem, ipsum dolor.</div>
+    <div class="m-3 rounded-4 p-4 bg-primary">Lorem, ipsum dolor.</div>
+     <div class="m-3 rounded-4 p-4 bg-danger">Lorem, ipsum dolor.</div>
+     <div class="h1 text-primary">Welcome</div>
+     <button type="button" class="btn btn-primary">primary</button>
+
+     
+</body>
+
+</html>
